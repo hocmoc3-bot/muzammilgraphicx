@@ -47,10 +47,9 @@ export function About() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed max-w-2xl">
               <p>
-                I am a graphic designer focused on creating clean, promotional, and engaging 
-                designs for brands and businesses. I specialize in social media posts, banners, 
-                product promotions, and branding visuals that help businesses attract customers 
-                and grow their presence.
+                I am a Graphic Designer with 3 years of experience creating clean, promotional,
+                and engaging designs. I specialize in social media posts, banners, branding
+                visuals, and print media that help businesses grow.
               </p>
             </div>
 
