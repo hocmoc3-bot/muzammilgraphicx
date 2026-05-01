@@ -17,7 +17,7 @@ export function About() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
           {/* Image Side - Massive Professional Portrait */}
-          <div className="relative w-full lg:w-1/2 shrink-0">
+          <div className="relative w-full lg:w-1/2 shrink-0 flex items-center justify-center">
             <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden border-2 border-border bg-secondary">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/m4-U7RZqkj6mhe8sxXL9v6I3AeIIpbix5.png"
