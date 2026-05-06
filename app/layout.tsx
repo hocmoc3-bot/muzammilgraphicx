@@ -5,13 +5,13 @@ import { Montserrat, Open_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ["latin"],
   variable: '--font-montserrat',
   display: 'swap',
 });
 
-const openSans = Open_Sans({ 
+const openSans = Open_Sans({
   subsets: ["latin"],
   variable: '--font-open-sans',
   display: 'swap',

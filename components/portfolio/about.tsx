@@ -1,8 +1,8 @@
 import Image from "next/image"
-import { 
-  Palette, 
-  PenTool, 
-  Layout, 
+import {
+  Palette,
+  PenTool,
+  Layout,
 } from "lucide-react"
 
 const skills = [
@@ -13,39 +13,33 @@ const skills = [
 
 export function About() {
   return (
-    <section id="about" className="py-32 md:py-40 bg-secondary/30">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
-          {/* Image Side - Massive Professional Portrait */}
-          <div className="relative w-full lg:w-1/2 shrink-0 flex items-center justify-center">
-            <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden border-2 border-border bg-secondary">
+    <section id="about" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+          {/* Image Side - Aligned Properly */}
+          <div className="relative w-full lg:w-1/2 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-sm lg:max-w-md aspect-[3/4] rounded-2xl overflow-hidden border-2 border-border bg-card shadow-2xl">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/m4-U7RZqkj6mhe8sxXL9v6I3AeIIpbix5.png"
+                src="/images/profile.jpg.png"
                 alt="Muzammil Malik - Graphic Designer"
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
                 priority
-                style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  objectFit: 'cover', 
-                  objectPosition: 'center center' 
-                }}
               />
             </div>
-            {/* Subtle Decorative Element */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary/20 rounded-2xl -z-10" />
+            {/* Decorative Element - Cyan Glow */}
+            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-cyan-500/20 rounded-2xl -z-10 hidden lg:block" />
           </div>
 
           {/* Content Side */}
-          <div className="flex-1 lg:w-1/2">
-            <span className="text-primary text-sm font-semibold uppercase tracking-widest">
+          <div className="w-full lg:w-1/2 lg:pl-8">
+            <span className="text-cyan-400 text-sm font-semibold uppercase tracking-widest">
               About Me
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6 text-balance">
+            <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6 text-foreground">
               Turning Ideas Into Visual Stories
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed max-w-2xl">
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 I am a Graphic Designer with 3 years of experience creating clean, promotional,
                 and engaging designs. I specialize in social media posts, banners, branding
@@ -62,10 +56,10 @@ export function About() {
                 {skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="flex items-center gap-2 bg-background border border-border rounded-lg px-4 py-3 hover:border-primary/50 transition-colors"
+                    className="flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-3 hover:border-cyan-500/50 hover:shadow-md hover:shadow-cyan-500/10 transition-all"
                   >
-                    <skill.icon className="w-4 h-4 text-primary" />
-                    <span className="text-sm">{skill.name}</span>
+                    <skill.icon className="w-4 h-4 text-cyan-400" />
+                    <span className="text-sm text-foreground">{skill.name}</span>
                   </div>
                 ))}
               </div>

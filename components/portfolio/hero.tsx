@@ -1,94 +1,94 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import Link from "next/link"
+import { motion } from "framer-motion"
 import { ArrowDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 export function Hero() {
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  useEffect(() => {
-    setIsLoaded(true)
-  }, [])
-
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Animated Mesh Gradient Background */}
-      <div className="absolute inset-0 bg-[#0a1628]">
-        <div className="absolute inset-0 opacity-60">
-          <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-[#0d4f6e] rounded-full blur-[120px] animate-[pulse_8s_ease-in-out_infinite]" />
-          <div className="absolute top-1/4 right-0 w-2/5 h-2/5 bg-[#0a3d5c] rounded-full blur-[100px] animate-[pulse_10s_ease-in-out_infinite_1s]" />
-          <div className="absolute bottom-0 left-1/4 w-2/5 h-2/5 bg-[#134e5e] rounded-full blur-[120px] animate-[pulse_12s_ease-in-out_infinite_2s]" />
-          <div className="absolute bottom-1/4 right-1/4 w-1/3 h-1/3 bg-[#0c3547] rounded-full blur-[100px] animate-[pulse_9s_ease-in-out_infinite_0.5s]" />
-        </div>
-      </div>
-      
-      {/* Subtle Grid Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,_rgba(255,255,255,0.02)_1px,_transparent_1px),linear-gradient(to_bottom,_rgba(255,255,255,0.02)_1px,_transparent_1px)] bg-[size:4rem_4rem] opacity-40" />
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
 
-      <div className="container mx-auto px-6 relative z-10 pt-24 md:pt-0">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 
-            className={`text-2xl sm:text-3xl md:text-4xl font-medium tracking-[0.15em] mb-6 text-balance transition-all duration-1000 delay-200 ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            Hi, I&apos;m <span className="text-primary">Muzammil Malik</span>
-            <br />
-            <span className="text-muted-foreground tracking-[0.12em]">Graphic Designer</span>
+      {/* Animated Background Blobs - Cyan/Purple Theme */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-cyan-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+      </div>
+
+      {/* Floating Design Tool Icons - Desktop Only */}
+      <div className="hidden md:block absolute top-20 left-10 animate-float opacity-20">
+        <div className="w-14 h-14 bg-cyan-500/10 border border-cyan-500/30 rounded-xl flex items-center justify-center text-cyan-400 font-bold text-sm shadow-lg shadow-cyan-500/10">Ps</div>
+      </div>
+      <div className="hidden md:block absolute top-40 right-16 animate-float-reverse opacity-20">
+        <div className="w-14 h-14 bg-purple-500/10 border border-purple-500/30 rounded-xl flex items-center justify-center text-purple-400 font-bold text-sm shadow-lg shadow-purple-500/10">Ai</div>
+      </div>
+      <div className="hidden md:block absolute bottom-40 left-20 animate-float opacity-15">
+        <div className="w-14 h-14 bg-cyan-400/10 border border-cyan-400/30 rounded-xl flex items-center justify-center text-cyan-300 font-bold text-sm shadow-lg shadow-cyan-400/10">Id</div>
+      </div>
+      <div className="hidden md:block absolute bottom-20 right-10 animate-float-reverse opacity-15">
+        <div className="w-14 h-14 bg-purple-400/10 border border-purple-400/30 rounded-xl flex items-center justify-center text-purple-300 font-bold text-sm shadow-lg shadow-purple-400/10">Fi</div>
+      </div>
+
+      <div className="container relative z-10 px-4 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          {/* Name with Gradient */}
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold mb-4 tracking-tight">
+            Hi, I'm{" "}
+            <span className="bg-gradient-to-r from-cyan-400 via-cyan-300 to-purple-500 bg-clip-text text-transparent">
+              Muzammil Malik
+            </span>
           </h1>
 
-          <p 
-            className={`text-sm text-primary font-medium mb-4 tracking-wider transition-all duration-1000 delay-300 ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
+          {/* Title */}
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium text-muted-foreground mb-6">
+            Graphic Designer
+          </h2>
+
+          {/* Tagline */}
+          <p className="text-base md:text-lg text-cyan-400 mb-6 font-semibold">
             Simple design. Strong impact.
           </p>
 
-          <p 
-            className={`text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty transition-all duration-1000 delay-400 ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            I create clean, promotional, and engaging graphic designs for brands and businesses. 
-            My work focuses on social media posts, banners, product promotions, and branding visuals 
-            that help businesses attract customers and present their products professionally.
+          {/* Description */}
+          <p className="text-sm md:text-base lg:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+            I create clean, promotional, and engaging graphic designs for brands and businesses.
+            My work focuses on social media posts, banners, product promotions, and branding
+            visuals that help businesses attract customers and present their products professionally.
           </p>
 
-          <div 
-            className={`flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 delay-500 ${
-              isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            <Button asChild size="lg" className="text-base px-8">
-              <Link href="#projects">View My Work</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="text-base px-8">
-              <Link href="#contact">Let&apos;s Talk</Link>
-            </Button>
+          {/* Buttons - Cyan Theme with Hover Glow */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#projects"
+              className="px-8 py-3 bg-cyan-500 text-white rounded-lg font-medium 
+                hover:bg-cyan-400 transition-all duration-300 hover:scale-105 
+                shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50"
+            >
+              View My Work
+            </a>
+            <a
+              href="#contact"
+              className="px-8 py-3 bg-background border border-border text-foreground rounded-lg font-medium 
+                hover:bg-muted hover:border-cyan-500/50 transition-all duration-300 hover:scale-105 
+                hover:shadow-lg hover:shadow-cyan-500/20"
+            >
+              Let's Talk
+            </a>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
-      <div 
-        className={`absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce transition-all duration-1000 delay-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-muted-foreground"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Link
-          href="#about"
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-        >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <ArrowDown className="w-5 h-5" />
-        </Link>
-      </div>
+        <ArrowDown className="w-6 h-6" />
+      </motion.div>
     </section>
   )
 }
